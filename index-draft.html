@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+    <head>
+        <title>Find Me Gluten Free: Find gluten-free friendly restaurants near you</title>
+        <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="author" content="Ashante Manning">
+		<meta name="description" content="The best rated gluten-free app for iPhone and Android. Download our FREE APP now.">
+		<meta name="keywords" content="gluten-free, restaurants, celiac, local">
+        <!-- ~~~~~~~~~~ OPEN GRAPH META TAGS ~~~~~~~~~~ -->
+        <meta property="og:title" content="Find Me Gluten Free: Find gluten-free friendly restaurants near you">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://www.findmeglutenfree.com/main/img/share.png">
+        <meta property="og:url" content="https://akmanni1.github.io/findmeglutenfree/">
+        <meta property="og:description" content="The best rated gluten-free app for iPhone and Android. 
+            Download our FREE APP now.">
+        <meta property="fb:admins" content="42600530"><meta property="fb:app_id" content="359830207390178">
+        <!-- ~~~~~~~~~~ GOOGLE FONTS ~~~~~~~~~~ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- ~~~~~~~~~~ STYLES ~~~~~~~~~~ -->
+		<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+		<!-- ~~~~~~~~~~ SCRIPTS ~~~~~~~~~~ -->
+		<script src="shopping.js" async></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	</head>
+        
+    <body class ="">
+		<a id="skip" href="#main-content">Skip to Main Content</a>
+        <!-- styling skip links: https://webaim.org/techniques/css/invisiblecontent/ -->
+			<header> 
+                <div><img class="logo img-fluid" alt="Find Me Gluten Free logo" src="/main/img/logo.png"></div>
+                <a href="index.html" class="active-page"><h1>Find Me Gluten Free</h1></a>
+                <h1>Find gluten-free friendly restaurants near you!</h1>
+                <div>
+                    <a href="/app">DOWNLOAD OUR FREE APP</a>
+                    <a href="/search">FIND RESTAURANTS</a>
+                </div>
+				<nav>
+					<ul>
+						<li><a href="index" class="active-page">Home</a></li>
+						<li><a href="#about">About</a></li>
+                        <li><a href="#contact">Search</a></li>
+						<li><a href="#products">Featured Cities</a></li>
+						<li><button onclick="darkMode()">Dark Mode</button></li>
+					</ul>
+				</nav>
+			</header>
+				
+			<main id="main-content">
+				<section id="about"><h2>About</h2>
+                <div>
+                    <a class="app"><img class="app-icon" alt="Find Me Gluten Free App Icon" src="/main/img/app_icon.png"></a>
+                        <h2>Find great gluten-free friendly restaurants, anywhere you go</h2>
+                        <p>Either plan ahead by entering your destination or find places near your current location. New restaurants listed every day all across the world! 
+                            Find dedicated GF places and celiac friendly spots with one tap!</p><br>
+                        <p>Don't have an iOS or Android device? Find gluten-free friendly restaurants right here on our website.
+                            Interested in getting some additional features while supporting further development? Subscribe to Premium!</p>
+                </div>
+                <p>Either plan ahead by entering your destination or find places near your current location. 
+                New restaurants listed every day all across the world!</p>
+                <p>Find dedicated GF places and celiac friendly spots with one tap!</p>
+                <div>
+                    <p>Download the best rated gluten-free app for 
+                    <a href="https://apps.apple.com/app/apple-store/id431006818?pt=649407&amp;ct=website%20home&amp;mt=8">iPhone</a> and 
+                    <a href="https://play.google.com/store/apps/details?id=com.fmgf.free">Android</a></p>
+                    <div>
+                        <a href="https://apps.apple.com/app/apple-store/id431006818?pt=649407&amp;ct=website%20home&amp;mt=8">
+                            <img style="margin:6%;width:88%" class="img-fluid" alt="Download Find Me Gluten Free on the App Store" src="/main/img/app_store.png"></a>
+                    </div>
+                    <div>
+                        <a href="https://play.google.com/store/apps/details?id=com.fmgf.free">
+                            <img class="img-fluid" alt="Get Find Me Gluten Free on Google Play" src="/main/img/google_play.png"></a>
+                    </div>
+                </div>
+				</section>
+
+                <section id="contact"><h2>Search <span class="form-required">*required</span></h2>
+					<p>Search all over the world for the best gluten-free friendly and celiac friendly 
+                        restaurants, bakeries &amp; more!</p>
+					
+                    <form id="form" target="_blank" method="GET" action="https://wp.zybooks.com/form-viewer.php" class="mt-5" novalidate="">
+
+                        <input type="hidden" id="search-lat" name="lat">
+                        <input type="hidden" id="search-lng" name="lng">
+                        <div class="form-group">
+                            <label for="query" class="font-weight-bold">What are you looking for? (Optional)</label>
+                            <input class="form-control form-control-lg" id="query" name="q" placeholder="e.g. Pizza, Bakeries, Pete's" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="font-weight-bold">Near (Address, City, State, or Postal Code)<span class="required">*</span></label>
+                            <input class="form-control form-control-lg" id="address" name="a" placeholder="Current Location" value="" required>
+
+                            <p class="hidden">Please enter a valid address</p><br>
+                        </div>
+                            
+                        <div class="mt-5"><h3>Filter Options</h3>
+                            <div class="form-group">
+                                <select id="chains-option" class="form-control form-control-lg">
+                                    <option value="">Chains and Local Businesses</option>
+                                    <option value="local">Local Businesses Only</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select id="gf-option" class="form-control form-control-lg">
+                                    <option value="">Show All Businesses</option>
+                                    <option value="dedicated">Dedicated Gluten-Free</option>
+                                    <option value="menu">Gluten-Free Menus</option>
+                                    <option value="cf">Most Celiac Friendly</option>
+                                </select>
+                            </div>
+                        </div>
+                            
+                        <p id="messageError" class="hidden">You must enter an address above to submit</p>
+                        <div class="mt-5 mb-5">
+                            <button id="go-btn" type="submit" class="btn btn-lg btn-search">SEARCH</button>
+                            <div class="mt-4" id="loader-container"></div>
+                        </div>
+                        
+                    </form>
+                    <p id="confirm" class="hidden"></p>
+				</section>
+				
+				<section id="products"><h2>Testimonials</h2>
+                    <p>What the gluten-free community is saying</p>
+                    <ul class="list-unstyled mt-4">
+					    <li>
+						    <span class="rating-stars align-baseline" style="font-size: 1.3rem; color: #ffcc00;" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> This app is amazing and extremely helpful when looking for celiac safe restaurants. 
+                                It has saved us many times when traveling. <i class="fas fa-quote-right"></i> </p>
+					    </li>
+					    <li class="mt-4">
+						    <span class="rating-stars align-baseline" style="font-size: 1.3rem; color: #ffcc00;" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> This app is THE most helpful app for gf people. 
+                                I seriously couldn’t live on the go without it. <i class="fas fa-quote-right"></i> </p>
+					    </li>
+					    <li class="mt-4">
+						    <span class="rating-stars align-baseline" style="font-size: 1.3rem; color: #ffcc00;" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> I have been using this app for years, every time I am looking for a restaurant. 
+                                Makes eating out at new areas so much easier! We typically choose all restaurants based on this app. 
+                                <i class="fas fa-quote-right"></i> </p>
+					    </li>
+				    </ul>
+            	</section>
+
+				<section id="cart"><h2>Featured Cities</h2>
+					<div class="col-6 col-md"><ul class="list-unstyled text-small flist">
+                        <li><a href="/us/ga/atlanta">Atlanta</a></li>
+                        <li><a href="/us/tx/austin">Austin</a></li>
+                        <li><a href="/us/md/baltimore">Baltimore</a></li>
+                        <li><a href="/us/ma/boston">Boston</a></li>
+                        <li><a href="/us/co/boulder">Boulder</a></li>
+                        <li><a href="/us/nc/charlotte">Charlotte</a></li>
+                        <li><a href="/us/il/chicago">Chicago</a></li>
+                        <li><a href="/us/tx/dallas">Dallas</a></li>
+                        <li><a href="/us/co/denver">Denver</a></li>
+                        <li><a href="/us/mi/detroit">Detroit</a></li>
+                        <li><a href="/ie/dublin">Dublin</a></li>
+                        <li><a href="/us/ct/hartford">Hartford</a></li>
+                        <li><a href="/us/hi/honolulu">Honolulu</a></li>
+                        <li><a href="/us/tx/houston">Houston</a></li>
+                        <li><a href="/us/in/indianapolis">Indianapolis</a></li>
+                        <li><a href="/us/nv/las-vegas">Las Vegas</a></li>
+                        <li><a href="/gb/london">London</a></li>
+                        <li><a href="/us/ca/los-angeles">Los Angeles</a></li>
+                        <li><a href="/us/fl/miami">Miami</a></li>
+                    </ul></div>
+                    <h2>&nbsp;</h2>
+                    <div class="col-6 col-md"></div><ul class="list-unstyled text-small flist">
+                            <li><a href="/us/mn/minneapolis">Minneapolis</a></li>
+                            <li><a href="/ca/qc/montreal">Montreal</a></li>
+                            <li><a href="/us/tn/nashville">Nashville</a></li>
+                            <li><a href="/us/la/new-orleans">New Orleans</a></li>
+                            <li><a href="/us/ny/new-york">New York</a></li>
+                            <li><a href="/us/ok/oklahoma-city">Oklahoma City</a></li>
+                            <li><a href="/us/ne/omaha">Omaha</a></li>
+                            <li><a href="/fr/paris">Paris</a></li>
+                            <li><a href="/us/pa/philadelphia">Philadelphia</a></li>
+                            <li><a href="/us/az/phoenix">Phoenix</a></li>
+                            <li><a href="/us/or/portland">Portland</a></li>
+                            <li><a href="/us/tx/san-antonio">San Antonio</a></li>
+                            <li><a href="/us/ca/san-diego">San Diego</a></li>
+                            <li><a href="/us/ca/san-francisco">San Francisco</a></li>
+                            <li><a href="/us/wa/seattle">Seattle</a></li>
+                            <li><a href="/ca/on/toronto">Toronto</a></li>
+                            <li><a href="/us/dc/washington">Washington DC</a></li>
+                            <li><a class="font-weight-bold" href="/us">More cities…</a></li>
+                            <li><a class="font-weight-bold" href="/countries">By Country</a></li>
+                            <li><a class="font-weight-bold" href="/airports">Airports</a></li>
+                        </ul></div>
+                    <h2>Chains</h2>
+                    <div class="col-6 col-md"><ul class="list-unstyled text-small flist">
+                        <li><a href="/chains/applebees">Applebees</a></li>
+                        <li><a href="/chains/arbys">Arbys</a></li>
+                        <li><a href="/chains/buffalo-wild-wings">Buffalo Wild Wings</a></li>
+                        <li><a href="/chains/burger-king">Burger King</a></li>
+                        <li><a href="/chains/chick-fil-a">Chick-fil-A</a></li>
+                        <li><a href="/chains/chilis">Chili's</a></li>
+                        <li><a href="/chains/chipotle">Chipotle</a></li>
+                        <li><a href="/chains/cracker-barrel">Cracker Barrel</a></li>
+                        <li><a href="/chains/dennys">Denny's</a></li>
+                        <li><a href="/chains/jersey-mikes-subs">Jersey Mike's Subs</a></li>
+                        <li><a href="/chains/mcdonalds">McDonald's</a></li>
+                        <li><a href="/chains/pei-wei">Pei Wei</a></li>
+                        <li><a href="/chains/pf-changs">P.F. Chang's</a></li>
+                        <li><a href="/chains/pizza-hut">Pizza Hut</a></li>
+                        <li><a href="/chains/red-robin">Red Robin</a></li>
+                        <li><a href="/chains/taco-bell">Taco Bell</a></li>
+                        <li><a href="/chains/cheesecake-factory">The Cheesecake Factory</a></li>
+                        <li><a href="/chains/wendys">Wendy's</a></li>
+                        <li><a class="font-weight-bold" href="/chains">More chains...</a></li>
+                    </ul></div>
+
+				</section>
+
+            </main>
+			                        
+            <footer>
+                <p>Social</p><ul class="list-unstyled text-small flist">
+			        <li><a href="https://www.instagram.com/findmeglutenfree/">Instagram</a></li>
+			        <li><a href="https://www.facebook.com/FindMeGlutenFree">Facebook</a></li>
+			        <li><a href="https://twitter.com/findmegf">Twitter</a></li>
+		        </ul>
+		        <ul class="mt-4 list-unstyled text-small flist">
+			        <li><a href="/privacy">Privacy</a></li>
+			        <li><a href="/terms">Terms</a></li>
+                </ul>
+		        <div>
+			        <small class="d-block mb-3 text-muted">Find Me Gluten Free &copy;2024</small>
+		        </div>
+            </footer>
+    </body>
+
+</html>
