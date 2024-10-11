@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Damion&family=Gluten:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* 	http://meyerweb.com/eric/tools/css/reset/ v2.0 
 	License: none (public domain) */
 
@@ -49,8 +51,8 @@
   /*---------- MOBILE FIRST / SMALL GLOBAL SCREENS ----------*/
   :root {
     font-size: 16px;
-    --font1: 'Molle', cursive;
-    --font2: 'Kdam Thmor Pro', sans-serif;
+    --font1: 'Damion', cursive;
+    --font2: 'Gluten', cursive;
     --font3: 'Montserrat', sans-serif;
     /*  Color Palette */
     --yellow: #FFD54F;    
@@ -58,7 +60,7 @@
     --dark-brown: #A66940;
     --green: #59a33b;
     --bright-red: #D92921;
-    --dark-red:#a40107;
+    --dark-red:#A40107;
     --dark-gray: #222222;
     --light-gray: #EAEAEA;
     --white: #FFFFFF;
@@ -82,7 +84,7 @@
   
   /* ----- BODY STYLES ----- */
   html {
-  background-color: var(--dark-gray);	
+  background-color: var(--dark-brown);	
   }
   body {
     background-color: var(--white);
@@ -108,7 +110,9 @@
     z-index: 0;
   }
   header a {
+    color: var(--green);
     text-decoration: none;
+    font-weight: bold;
   }
   .dark-mode header {
     background-color: var(--dark-red);
@@ -116,9 +120,11 @@
   
   /* ----- HEADING STYLES ----- */
   h1 {
-    height: 35px;
+    height: 2rem;
     color: var(--white);
     font-family: var(--font1);
+    font-size: 175%;
+    font-weight: normal;
   }
   h2 {
     font-size: 150%;
@@ -133,11 +139,14 @@
   h2, h3 {
     font-family: var(--font2);
   }
-  
+  #about h3, #testimonials h3 {
+    font-family: var(--font3);
+  }
+
   /* ----- NAVIGATION STYLES ----- */
   nav {
     margin: 0 auto;
-    border-top: 1px solid var(--dark-gray);
+    border-top: 3px solid var(--yellow);
     border-bottom: 3px solid var(--yellow);
     background-color: var(--bright-red);
     position: relative;
@@ -187,8 +196,45 @@
     width: 130px;
     height: 40px;
     border: 2px solid var(--dark-gray);
+    border-radius: 5px;
   }
-  
+
+  /* ----- IMAGE AND ICON STYLES ----- */
+  img, .fas {
+    display: inline-block;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  .img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+  }
+  .img-screenshot{
+    max-width: 100%;
+    height: auto;
+  }
+  .logo {
+    padding: 1em;
+  }
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
+  .fas {
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+  .rating-stars {
+    font-size: 1.3rem; 
+    color: var(--yellow);
+  }
+
   /* ----- MAIN STYLES ----- */
   main {
     background-color: var(--light-gray);
@@ -215,84 +261,34 @@
     background-color: var(--dark-red);
     color: var(--white);
     font-weight: bold;
+    border-radius: 5px;
   }
   
   /* ----- ABOUT SECTION STYLES ----- */
   #about {
     padding: 3rem;
-    background-color: var(--light-gray);
+    background-color: var(--light-brown);
   }
   .dark-mode #about {
     background-color: var(--dark-gray);
   }
+  #about a {
+    color: var(--green);
+    text-decoration: none;
+    font-weight: bold;
+  }
   
-  /* ----- FEATURED SECTION STYLES ----- */
-  #featured {
-    padding: 2rem;
-    background-color: var(--black);
+  /* ----- SEARCH SECTION STYLES ----- */
+  #search {
+    padding: 2rem 4rem;
+    background-color: var(--dark-gray);
     color: var(--white);
     border-top: 3px solid var(--yellow);
     border-bottom: 3px solid var(--yellow);
-    overflow: hidden;
-  }
-  #featured div {
-    display: grid;
-    margin: 5px;
-    grid-template-columns: 1fr;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-  }
-  #featured section {
-    display: block; 
-    position: relative; 
-    margin: 0 auto;
-  }
-  #featured img {
-    width: 100%;
-    height: auto;
-    z-index: 0;
-  }
-  #featured h3 {
-    margin-top: 10px;
-    font-size: 120%;
-  }
-  .carousel {
-    display: flex;
-    transition: transform 0.3s ease;
-  }
-  .imgcaption {
-    background-color: var(--black);
-    color: var(--white);
-    text-align: center;
-    bottom: 5px;
-    left: 5px;
-    flex: 0 0 100%;
-  }
-  .product-button {
-    margin: 5px auto;
-  }
-  
-  /* ----- CART SECTION STYLES ----- */
-  #cart {
-    background-color: var(--light-gray);
-    display: block; 
-    position: relative; 
-    margin: 0 auto;
-  }
-  .dark-mode #cart {
-    background-color: var(--dark-gray);
-  }
-  
-  /* ----- CONTACT SECTION STYLES ----- */
-  #contact {
-    padding: 2rem 4rem;
-    background-color: var(--light-gray);
   }
   form {
     margin: 10px auto;
     padding: 10px;
-    border: 2px solid var(--black);
-    border-radius: 5px;
     color: var(--white);
     background-color: var(--dark-gray);
     font-family: var(--font2);
@@ -301,10 +297,10 @@
     font-weight: bold;
     padding: 0px 10px 15px;
   }
-  .dark-mode #contact {
+  .dark-mode #search {
     background-color: var(--dark-gray);
   }
-  #contact input {
+  #search input {
     display: inline;
     margin: 0.5rem 0rem;
     border: 1.5px solid var(--dark-gray);
@@ -337,7 +333,7 @@
     height: 100px;
     margin-top: 15px;
   }
-  #mySubmit, #addCart, .checkout, #myWeatherSubmit {
+  #mySubmit, #myWeatherSubmit {
     background-color: var(--dark-red);
     color: var(--white);
     font-weight: bold;
@@ -364,12 +360,62 @@
   #messageError, input + span, p ol {
     color: var(--bright-red);
   }
+
+  /* ----- FEATURED SECTION STYLES ----- */
+   #featured {
+    padding: 2rem;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border-top: 3px solid var(--yellow);
+    border-bottom: 3px solid var(--yellow);
+    overflow: hidden;
+  }
+  #featured div {
+    display: grid;
+    margin: 5px;
+    grid-template-columns: 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+  #featured section {
+    display: block; 
+    position: relative; 
+    margin: 0 auto;
+  }
+  #featured img {
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  }
+  #featured h3 {
+    margin-top: 10px;
+    font-size: 120%;
+  }
+  #featured a {
+    display: inline;
+    padding: 5px 0px;
+    color: var(--yellow);
+    text-decoration: none;
+  }
+  #featured .bold {
+    font-weight: bold;
+  }
+
+  /* ----- TESTIMONIALS STYLES ----- */
+  #testimonials {
+    background-color: var(--light-gray);
+    display: block; 
+    position: relative; 
+    margin: 0 auto;
+  }
+  .dark-mode #testimonials {
+    background-color: var(--dark-gray);
+  }
   
   /* FOOTER STYLES */
   footer {
     position: relative;
-    background-color: var(--black);
-    color: var(--green);
+    background-color: var(--dark-red);
     font-weight: bold;
     border-top: 3px solid var(--yellow);
     border-bottom: 1px solid var(--dark-gray);
@@ -382,8 +428,9 @@
   }
   footer a {
     display: inline;
+    font-style: smaller;
     padding: 8px 10px;
-    color: var(--yellow);
+    color: var(--green);
     text-decoration: none;
   }
   .dark-mode footer a {
@@ -441,7 +488,7 @@
     main {
         min-width: 880px;
     }
-  #featured {
+  footer {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -449,22 +496,9 @@
     "title"
     "div";
   }
-  #featured h3 {
+  #footer h3 {
     grid-area: title;
   }
-  #featured div {
-      grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr;
-    grid-column-gap: 5px;
-      grid-row-gap: 10px;
-    grid-area: div;
-    grid-template-areas:
-    "peachTea lavenderTea"
-    "chamomileTea goldFlowerTea"
-    "lavenderCandle lindenTea"
-    "monkStatue" "monkStatue"
-    "traditionalTeapot teaComboSet";
-   }
   input {
         width: 700px;
     }
@@ -486,216 +520,19 @@
     main {
         max-width: 1000px;
     }
-    #featured div {
+    footer div {
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 5px;
         grid-row-gap: 100px;
     }
-    #cart, #featured {
+    #testimonials, #featured {
         position: relative;
     }
-    #cart {
-        width: 30%;
-        height: 100%;
-        bottom: 640px;
+    #testimonials {
         padding: 35px 0.5px;
-        float: right;
         text-align: center;
-    }
-    #featured {
-        width: 60%;
     }
     input {
         width: 750px;
     }
   }
-  
-  /* Old website styles */
-img {
-  -o-object-fit:cover;
-  object-fit:cover;
-  display:inline-block
-}
-.img-responsive {
-  max-width:100%;
-  max-height:100%;
-  height:auto;
-  display:block
-}
-    .rating-stars {
-      font-size:1.3rem;
-      color:#ffc300
-    }
-    .rating-stars-small {
-      font-size:1rem!important
-    }
-    .rating-hearts {
-      font-size:1.3rem;
-      color:#d23a4d
-    }
-    .rating-hearts-small {
-      font-size:1rem!important
-    }
-    .rating-num {
-      color:#404040;
-      font-size:16px!important
-    }
-    .tn {
-      margin-top:10px
-    }
-    .tip-d {
-      color:#404040;
-      font-size:14px
-    }
-    .link-c {
-      margin:20px 0
-    }
-    .sec-h {
-      margin-top:40px
-    }
-    .ch-tags {
-      color:#404040;
-      margin-top:10px
-    }
-    .ch-n {
-      white-space:pre-wrap
-    }
-    .flist {
-      color:#6c757d!important
-    }
-    .chr-list li {
-      margin-top:1.5rem!important
-    }
-    .ch-list {
-      font-size:1.6rem
-    }
-    .ch-list li {
-      margin-top:1.2rem!important
-    }
-    .bl li {
-      margin-top:1.4rem!important
-    }
-    .bl-tags {
-      font-weight:600;
-      color:#4c4c4c
-    }
-    .bl-cm {
-      font-weight:700;
-      color:#1c1c1c;
-      font-size:.9rem
-    }
-    .btn-search {
-      color:#fff;
-      background-color:#a40107;
-      border-color:#a40107
-    }
-    .btn-search:hover,
-    .btn-search:focus,
-    .btn-search:active,
-    .btn-search.active {
-      color:#d9d9d9
-    }
-    .loader {
-      border:10px solid #f3f3f3;
-      border-top:10px solid #636363;
-      border-radius:50%;
-      margin-left:20px;
-      width:20px;
-      height:20px;
-      animation:spin 2s linear infinite
-    }
-    @keyframes spin {
-      0% {
-        transform:rotate(0deg)
-      }
-      100% {
-        transform:rotate(360deg)
-      }
-    }
-    .bp-aside {
-      background:#f4f4f4;
-      border-radius:.3rem
-    }
-    .ppic {
-      border-radius:.2rem
-    }
-    .url {
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis
-    }
-    .forcepointer {
-      cursor:pointer
-    }
-    .city-agh a {
-      color:#212529;
-      text-decoration:none!important
-    }
-    .btn-primary-fmgf {
-      color:#fff;
-      background-color:#a40107;
-      border-color:#a40107
-    }
-    .btn-primary-fmgf:hover {
-      color:#fff;
-      background-color:#8c0106;
-      border-color:#8c0106
-    }
-    .house-aside {
-      background:#f4f4f4;
-      border-radius:.3rem;
-      overflow:hidden
-    }
-    .crop-circle {
-      border-radius:50%;
-      overflow:hidden
-    }
-    #downloadBanner {
-      padding:8px 12px;
-      background:#50bae0;
-      color:#fff;
-      font-weight:700;
-      font-size:.8rem
-    }
-    #downloadBanner .closeButton {
-      color:#f4f4f4;
-      font-size:1.2rem
-    }
-    #downloadBanner a {
-      color:#fff
-    }
-    .downloadPromptModal .modal-header {
-      border-bottom-style:none;
-      padding:1rem 1rem 0
-    }
-    .downloadPromptModal .modal-body {
-      padding:0 1rem 1rem
-    }
-    .downloadPromptLogo {
-      max-height:5vh
-    }
-    .downloadPromptPhone {
-      max-height:52vh
-    }
-    .dlpu-fmgf-red {
-      color:#d6143f
-    }
-    .menu-items-with-votes {
-      font-size:1.2rem
-    }
-    .vote-summary-votes {
-      border-radius:4px;
-      padding:2px 4px;
-      color:#fff;
-      font-size:.8rem;
-      font-weight:700;
-      vertical-align:middle;
-      margin-left:2px;
-      white-space:nowrap
-    }
-    .vote-summary-votes.positive-votes {
-      background:#079807
-    }
-    .vote-summary-votes.negative-votes {
-      background:#b90c0c
-    }
