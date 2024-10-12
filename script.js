@@ -6,6 +6,16 @@ function darkMode() {
   element.classList.toggle("dark-mode");
 }
 
+// Tabs JQuery UI Widget
+$( function() {
+  $( "#tabs" ).tabs();
+} );
+
+// Menu Bar JQuery UI Widget
+$( function() {
+  $( "#menu" ).menu();
+} );
+
 // Form validation
 function validateForm(event){
   // Prevents default form submission
@@ -92,114 +102,47 @@ function validateForm(event){
     }
 }
 
-// Event listeners; gets HTML collection of all the buttons for adding to the cart
-let productButtons = document.getElementsByClassName('product-button');
-for (let b = 0; b < productButtons.length; b++) {
-  //console.log(productButtons[b]);
-  productButtons[b].addEventListener("click", addProduct);
-}
+// Google Maps API
+// async function init() {
+//   await customElements.whenDefined('gmp-map');
 
-// Have 1 event handler function that knows which product button was clicked.
-function addProduct(e) {
-  console.log(e);
-  if (e.target.id == 'product1') {
-    console.log('Add 13.00 to total');
-    totalCart += 13.00;
-  }
-}
+//   const map = document.querySelector('gmp-map');
+//   const marker = document.querySelector('gmp-advanced-marker');
+//   const placePicker = document.querySelector('gmpx-place-picker');
+//   const infowindow = new google.maps.InfoWindow();
 
-// Weather API
-function getWeather(lat, long){
-  // Section for the output to display
-	let weatherSection = document.getElementById("weather");
-	
-	let output = "";
-	// Clears out any previous output
-	weatherSection.innerHTML = "";
+//   map.innerMap.setOptions({
+//     mapTypeControl: false
+//   });
 
-	// Variables needed for the API call and displaying the returned data
-	let apiKey = "2672eeff80c837aa062d5971c52a2f0a";
-	let imgUrlStart = "http://openweathermap.org/img/wn/";
-	let imgUrlEnd = "@2x.png";
-	let endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=imperial&appid=${apiKey}`;
-  
-	let xhr = new XMLHttpRequest();
-	
-	// add an event listener for the load event on the object
-	xhr.addEventListener("load", function(){
-    // Displays the weather for a successful response
-    if(this.status == 200){
-      let ms = this.response.dt * 1000;
-      let date = new Date(ms);
-      
-      ms = this.response.sys.sunrise * 1000;
-      let rise = new Date(ms);
-      
-      ms = this.response.sys.sunset * 1000;
-      let set = new Date(ms);
+//   placePicker.addEventListener('gmpx-placechange', () => {
+//     const place = placePicker.value;
 
-	// Builds the URL for the weather icon/image
-	let iconCode = this.response.weather[0].icon;
-	let iconUrl = `${imgUrlStart}${iconCode}${imgUrlEnd}`;
-	
-	// Appends to the output string
-	output += `<h4>Today's Weather for ${this.response.name}</h4>
-	<img src="${iconUrl}" alt="${this.response.weather[0].main}">
-	<dl>
-	<dt>Current Conditions:</dt>
-	<dd>${this.response.weather[0].description}</dd>
-	<dt>Current Temp:</dt>
-	<dd>${Math.round(this.response.main.temp)}&deg;</dd>
-	<dt>Local Max Temp:</dt>
-	<dd>${Math.round(this.response.main.temp_max)}&deg;</dd>
-	<dt>Local Min Temp:</dt>
-	<dd>${Math.round(this.response.main.temp_max)}&deg;</dd>
-	<dt>Sunrise:</dt>
-	<dd>${new Intl.DateTimeFormat('en-US', { dateStyle: 'short', timeStyle: 'medium' }).format(rise)}</dd>
-	<dt>Sunset:</dt>
-	<dd>${new Intl.DateTimeFormat('en-US', { dateStyle: 'short', timeStyle: 'medium' }).format(set)}</dd>
-	</dl>`;
-	// remove the class from the section that has been keeping it hidden on the page
-	weatherSection.classList.remove("hidden");
-	// add the class to make it display
-	weatherSection.classList.add("display");
-	// add the output string to that section to display our weather data from the API
-	weatherSection.innerHTML = output;
-}else{
-	// displays an error message incase we get a 401 error response from the server
-	weatherSection.innerHTML = "There was an issue with your call to the Open Weather API. Check the endopint and try again.";
-}
-});
-	// set the expected response type
-	xhr.responseType = "json";
-	
-	// open a connection to the endpoint of the correct type
-	xhr.open("GET", endpoint);
-	
-	// send the request to the server
-	xhr.send();
-}
+//     if (!place.location) {
+//       window.alert(
+//         "No details available for input: '" + place.name + "'"
+//       );
+//       infowindow.close();
+//       marker.position = null;
+//       return;
+//     }
 
-// this function will get the user's geolocation on button click, and once it has that, it will call the function with the call to the API
-// If it is unable to get the geolocation info, an error message will be displayed and the API will not be called
-function getLocation(e){
-	// preventDefault form submission
-	e.preventDefault();
+//     if (place.viewport) {
+//       map.innerMap.fitBounds(place.viewport);
+//     } else {
+//       map.center = place.location;
+//       map.zoom = 17;
+//     }
 
-	//get user's geolocation to use to return weather for that location
+//     marker.position = place.location;
+//     infowindow.setContent(
+//       `<strong>${place.displayName}</strong><br>
+//        <span>${place.formattedAddress}</span>
+//     `);
+//     infowindow.open(map.innerMap, marker);
+//   });
+// }
 
-	//user will have to agree to allow this access, may need to use Firefox
-	if(!navigator.geolocation) {
-		document.getElementById("weather").textContent = 'Geolocation is not supported by your browser';
-	} else {
-		navigator.geolocation.getCurrentPosition(success);
-		function success(location){
-			getWeather(location.coords.latitude, location.coords.longitude);
-			console.log(location);
-		}
-	}
-}
-
-// Event listeners
+// Event Listeners
 document.getElementById("newMessage").addEventListener("submit", validateForm);
-document.getElementById("myWeatherSubmit").addEventListener("click", getLocation);
+// document.addEventListener('DOMContentLoaded', init);

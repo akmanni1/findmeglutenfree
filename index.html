@@ -16,42 +16,54 @@
         <meta property="og:description" content="The best rated gluten-free app for iPhone and Android. 
             Download our FREE APP now.">
         <meta property="fb:admins" content="42600530"><meta property="fb:app_id" content="359830207390178">
-        <!-- ~~~~~~~~~~ GOOGLE FONTS ~~~~~~~~~~ -->
+        <!-- ~~~~~~~~~~FAVICON ~~~~~~~~~~ -->
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<!-- ~~~~~~~~~~ GOOGLE FONTS ~~~~~~~~~~ -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Damion&family=Gluten:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<!-- ~~~~~~~~~~ STYLES ~~~~~~~~~~ -->
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
 		<link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<!-- ~~~~~~~~~~ SCRIPTS ~~~~~~~~~~ -->
 		<script src="script.js" async></script>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+		<script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-        <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+		<script src="https://kit.fontawesome.com/bbcd57b5fe.js" crossorigin="anonymous"></script>
 	</head>
         
     <body class ="">
 		<a id="skip" href="#main-content">Skip to Main Content</a>
         <!-- styling skip links: https://webaim.org/techniques/css/invisiblecontent/ -->
 			<header> 
-                <a href="index.html"><img class="logo img-fluid" src="/images/fmgf_final_logo.png" alt="Find Me Gluten Free Logo"></a>
+                <a href="index.html"><img class="logo" src="images/fmgf_final_logo.png" alt="Find Me Gluten Free Logo"></a>
                 <a href="index.html" class="active-page"><h1>Find me Gluten Free</h1></a>
                 <h1>Find gluten-free friendly restaurants near you!</h1>
 				<nav>
-					<ul>
+					<ul id="top-nav">
 						<li><a href="index" class="active-page">Home</a></li>
-						<li><a href="#about">About</a></li>
-                        <li><a href="#search">Search</a></li>
-						<li><a href="#featured">Featured Cities</a></li>
+						<li><a href="#tabs-1">About</a></li>
+                        <li><a href="#tabs-2">Search</a></li>
+						<li><a href="#tabs-3">Featured Cities</a></li>
 						<li><button onclick="darkMode()">Dark Mode</button></li>
+					</ul>
+					<ul id="menu">
+						<li><a href="#local"><i class="fa-solid fa-location-dot"></i></a></li>
+						<li><a href="#find"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+						<li><a href="#contribute"><i class="fa-regular fa-square-plus"></i></a></li>
+						<li><a href="#bookmarks"><i class="fa-regular fa-bookmark"></i></a></li>
+						<li><a href="#more"><i class="fa-solid fa-ellipsis"></i></a></li>
 					</ul>
 				</nav>
 			</header>
 				
 			<main id="main-content">
-				<section id="about"><h2>About</h2>
+			<div id="tabs">
+				<div id="tabs-1"><h2>About</h2>
                 <div>
                     <h3>Find great gluten-free friendly restaurants, anywhere you go</h3><br>
                     <p>Either plan ahead by entering your destination or find places near your current location. New restaurants listed every day all across the world! 
@@ -66,22 +78,22 @@
                     <p>Download the best rated gluten-free app for 
                     <a href="https://apps.apple.com/app/apple-store/id431006818?pt=649407&amp;ct=website%20home&amp;mt=8">iPhone</a> 
                     and 
-                    <a href="https://play.google.com/store/apps/details?id=com.fmgf.free">Android</a>.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.fmgf.free">Android</a>.</p><br>
                     <div>
                         <a href="https://apps.apple.com/app/apple-store/id431006818?pt=649407&amp;ct=website%20home&amp;mt=8">
-                            <img class="img-fluid" style="margin:6%;width:88%" alt="Download Find Me Gluten Free on the App Store" src="/images/app_store_button.png"></a>
+                            <img class="img-fluid" alt="Download Find Me Gluten Free on the App Store" src="images/app_store_button.png"></a>
                     </div>
                     <div>
                         <a href="https://play.google.com/store/apps/details?id=com.fmgf.free">
-                            <img class="img-fluid" alt="Get Find Me Gluten Free on Google Play" src="/images/google_play_button.png"></a>
+                            <img class="img-fluid" alt="Get Find Me Gluten Free on Google Play" src="images/google_play_button.png"></a>
                     </div>
                 </div>
                 <div>
-                    <img class="img-screenshot" src="/images/app_screenshot.png" alt="Find Me Gluten Free App Screenshot">
+                    <img class="img-screenshot" src="images/app_screenshot.png" alt="Find Me Gluten Free App Screenshot">
                 </div>
-				</section>
+			</div>
 
-                <section id="search"><h2>Search <span class="form-required">*required</span></h2>
+                <div id="tabs-2"><h2>Search <span class="form-required">*required</span></h2>
 					<p>Search all over the world for the best gluten-free friendly and celiac friendly 
                         restaurants, bakeries &amp; more!</p>
 					
@@ -89,25 +101,25 @@
 
                         <input type="hidden" id="search-lat" name="lat">
                         <input type="hidden" id="search-lng" name="lng">
-                        <div class="form-group">
+                        <div>
                             <label for="query" class="bold">What are you looking for? (Optional)</label>
                             <input class="form-control form-control-lg" id="query" name="q" placeholder="e.g. Pizza, Bakeries, Pete's" value="">
                         </div>
-                        <div class="form-group">
+                        <div>
                             <label for="address" class="bold">Near (Address, City, State, or Postal Code)<span class="required">*</span></label>
                             <input class="form-control form-control-lg" id="address" name="a" placeholder="Current Location" value="" required>
 
-                            <p class="hidden">Please enter a valid address</p><br>
+                            <p class="hidden">Please enter a valid address</p>
                         </div>
                             
-                        <div class="mt-5"><h3>Filter Options</h3>
-                            <div class="form-group">
+                        <div><h3>Filter Options</h3>
+                            <div>
                                 <select id="chains-option" class="form-control form-control-lg">
                                     <option value="">Chains and Local Businesses</option>
                                     <option value="local">Local Businesses Only</option>
                                 </select>
                             </div><br>
-                            <div class="form-group">
+                            <div>
                                 <select id="gf-option" class="form-control form-control-lg">
                                     <option value="">Show All Businesses</option>
                                     <option value="dedicated">Dedicated Gluten-Free</option>
@@ -116,59 +128,21 @@
                                 </select>
                             </div>
                         </div>
-                            
+
                         <p id="messageError" class="hidden">You must enter an address above to submit</p>
-                        <div class="mt-5 mb-5">
-                            <button id="go-btn" type="submit" class="btn btn-lg btn-search">Search</button>
-                            <div class="mt-4" id="loader-container"></div>
+                        <div>
+                            <button id="mySubmit">Search</button>
                         </div>
-                        
                     </form>
                     <p id="confirm" class="hidden"></p>
-				</section>
-				
-				<section id="testimonials"><h2>Testimonials</h2>
-                    <h3>What the gluten-free community is saying</h3><br>
-                    <ul>
-					    <li>
-						    <span class="rating-stars align-baseline" title="5 star rating">
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-						    </span>
-						    <p><i class="fas fa-quote-left"></i> This app is amazing and extremely helpful when looking for celiac safe restaurants. 
-                                It has saved us many times when traveling.<i class="fas fa-quote-right"></i> </p>
-					    </li><br>
-					    <li class="mt-4">
-						    <span class="rating-stars align-baseline" title="5 star rating">
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-						    </span>
-						    <p><i class="fas fa-quote-left"></i> This app is THE most helpful app for gf people. 
-                                I seriously couldn’t live on the go without it. <i class="fas fa-quote-right"></i> </p>
-					    </li><br>
-					    <li class="mt-4">
-						    <span class="rating-stars align-baseline" title="5 star rating">
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-							    <i class="fas fa-star"></i>
-						    </span>
-						    <p><i class="fas fa-quote-left"></i> I have been using this app for years, every time I am looking for a restaurant. 
-                                Makes eating out at new areas so much easier! We typically choose all restaurants based on this app. 
-                                <i class="fas fa-quote-right"></i> </p>
-					    </li>
-				    </ul>
-            	</section>
 
-				<section id="featured"><h2>Featured Cities</h2>
-					<div class="col-6 col-md"><ul class="list-unstyled text-small flist">
+					<iframe src="https://my.atlist.com/map/1325078c-57fc-45c0-888f-05c71a9b88a2?share=true" allow="geolocation 'self' https://my.atlist.com" width="75%" height="400px" loading="lazy" frameborder="0" scrolling="no" allowfullscreen id="atlist-embed">
+					</iframe>
+				
+				</div>
+
+				<div id="tabs-3"><h2>Featured Cities</h2>
+					<section><ul>
                         <li><a href="https://www.findmeglutenfree.com/us/ga/atlanta">Atlanta</a></li>
                         <li><a href="https://www.findmeglutenfree.com/us/tx/austin">Austin</a></li>
                         <li><a href="https://www.findmeglutenfree.com/us/md/baltimore">Baltimore</a></li>
@@ -205,13 +179,14 @@
                         <li><a href="https://www.findmeglutenfree.com/us/wa/seattle">Seattle</a></li>
                         <li><a href="https://www.findmeglutenfree.com/ca/on/toronto">Toronto</a></li>
                         <li><a href="https://www.findmeglutenfree.com/us/dc/washington">Washington DC</a></li>
-                        <br><br><li><a class="bold" href="https://www.findmeglutenfree.com/us">More cities…</a></li>
+                        <li><br><br></li>
+						<li><a class="bold" href="https://www.findmeglutenfree.com/us">More cities…</a></li>
                         <li><a class="bold" href="https://www.findmeglutenfree.com/countries">By Country</a></li>
                         <li><a class="bold" href="https://www.findmeglutenfree.com/airports">Airports</a></li>
-                    </ul></div>
+                    </ul></section>
                     <h2>&nbsp;</h2>
                     <h2>Chains</h2>
-                    <div class="col-6 col-md"><ul class="list-unstyled text-small flist">
+                    <section><ul>
                         <li><a href="https://www.findmeglutenfree.com/chains/applebees">Applebees</a></li>
                         <li><a href="https://www.findmeglutenfree.com/chains/arbys">Arbys</a></li>
                         <li><a href="https://www.findmeglutenfree.com/chains/buffalo-wild-wings">Buffalo Wild Wings</a></li>
@@ -230,24 +205,63 @@
                         <li><a href="https://www.findmeglutenfree.com/chains/taco-bell">Taco Bell</a></li>
                         <li><a href="https://www.findmeglutenfree.com/chains/cheesecake-factory">The Cheesecake Factory</a></li>
                         <li><a href="https://www.findmeglutenfree.com/chains/wendys">Wendy's</a></li>
-                        <br><br><li><a class="bold" href="https://www.findmeglutenfree.com/chains">More chains...</a></li>
-                    </ul></div>
+                        <li><br><br></li>
+						<li><p><a class="bold" href="https://www.findmeglutenfree.com/chains">More chains...</a></p></li>
+                    </ul></section>
+				</div>
 
-				</section>
+				<section id="testimonials"><h2>Testimonials</h2>
+                    <h3>What the gluten-free community is saying</h3><br>
+                    <ul>
+					    <li>
+						    <span class="rating-stars align-baseline" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> This app is amazing and extremely helpful when looking for celiac safe restaurants. 
+                                It has saved us many times when traveling.<i class="fas fa-quote-right"></i> </p>
+					    </li><br>
+					    <li>
+						    <span class="rating-stars align-baseline" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> This app is THE most helpful app for gf people. 
+                                I seriously couldn’t live on the go without it. <i class="fas fa-quote-right"></i> </p>
+					    </li><br>
+					    <li>
+						    <span class="rating-stars align-baseline" title="5 star rating">
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+							    <i class="fas fa-star"></i>
+						    </span>
+						    <p><i class="fas fa-quote-left"></i> I have been using this app for years, every time I am looking for a restaurant. 
+                                Makes eating out at new areas so much easier! We typically choose all restaurants based on this app. 
+                                <i class="fas fa-quote-right"></i> </p>
+					    </li>
+				    </ul>
+            	</section>
 
-            </main>
+            </div>
+			</main>
 			                        
             <footer>
                 <h3>Social</h3><ul>
-                    <li><a href="https://www.instagram.com/findmeglutenfree/"><i class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://www.instagram.com/findmeglutenfree/">Instagram</a></li>
                     <li><a href="https://www.facebook.com/FindMeGlutenFree">Facebook</a></li>
                     <li><a href="https://twitter.com/findmegf">Twitter</a></li>
-		        </ul>
-		        <ul>
-			        <small><li><a href="https://www.findmeglutenfree.com/privacy">Privacy</a></li>
-			        <li><a href="https://www.findmeglutenfree.com/terms">Terms</a></li></small>
+					<li><a href="https://www.findmeglutenfree.com/privacy">Privacy</a></li>
+			        <li><a href="https://www.findmeglutenfree.com/terms">Terms</a></li>
                 </ul>
-		        <small><h3>Find Me Gluten Free &copy;2024</h3></small>
+		        <h3><small>Find Me Gluten Free &copy;2024</small></h3>
             </footer>
     </body>
 

@@ -84,7 +84,7 @@
   
   /* ----- BODY STYLES ----- */
   html {
-  background-color: var(--dark-brown);	
+    background-color: var(--dark-brown);	
   }
   body {
     background-color: var(--white);
@@ -105,8 +105,7 @@
     width: 900px;
     height: 200px;
     background-color: var(--dark-red);
-    background-image: url(images/kaiteaWebHeader.jpg);
-    background-repeat: no-repeat;
+    border-bottom: 3px solid var(--yellow);
     z-index: 0;
   }
   header a {
@@ -125,9 +124,11 @@
     font-family: var(--font1);
     font-size: 175%;
     font-weight: normal;
+    text-align: right;
+    padding-right: 5rem;
   }
   h2 {
-    font-size: 150%;
+    font-size: 175%;
     margin-bottom: 5px;
     padding-left: 20px;
   }
@@ -139,20 +140,11 @@
   h2, h3 {
     font-family: var(--font2);
   }
-  #about h3, #testimonials h3 {
+  #tabs-1 h3, #testimonials h3 {
     font-family: var(--font3);
   }
 
   /* ----- NAVIGATION STYLES ----- */
-  nav {
-    margin: 0 auto;
-    border-top: 3px solid var(--yellow);
-    border-bottom: 3px solid var(--yellow);
-    background-color: var(--bright-red);
-    position: relative;
-    top: 40px;
-    z-index: 1;
-  }
   .dark-mode nav {
     border-top: 1px solid var(--dark-gray);
     border-bottom: 3px solid var(--yellow);
@@ -192,19 +184,39 @@
     background-color: var(--yellow);
     color: var(--dark-gray);
   }
-  nav button{
-    width: 130px;
+  #top-nav button{
+    width: 100px;
     height: 40px;
     border: 2px solid var(--dark-gray);
     border-radius: 5px;
   }
+  nav {
+    margin: 0 auto;
+    background-color: var(--bright-red);
+    position: fixed;
+    bottom: 0px;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    z-index: 1;
+  }
+  #top-nav {
+    visibility: hidden;
+  }
+  #menu {
+    padding: 10px;
+    border-style: solid;
+}
+.ui-menu { 
+  width: 150px; 
+}
 
   /* ----- IMAGE AND ICON STYLES ----- */
   img, .fas {
     display: inline-block;
   }
   .img-fluid {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
   }
   .img-responsive {
@@ -215,20 +227,23 @@
   }
   .img-screenshot{
     max-width: 100%;
-    height: auto;
+    height: 1px;
+    visibility: hidden;
   }
   .logo {
-    padding: 1em;
+    max-width: 8%;
+    height: auto;
+    padding: 0.5rem;
   }
   .img-fluid {
     max-width: 100%;
     height: auto;
   }
-  .fas {
+  .fas, .fa-solid, .fa-regular {
     text-rendering: auto;
     line-height: 1;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    font-size: 1.5rem;
   }
   .rating-stars {
     font-size: 1.3rem; 
@@ -258,28 +273,31 @@
   }
   button {
     cursor: pointer;
+    width: 90px;
+    height: 35px;
     background-color: var(--dark-red);
-    color: var(--white);
+    color: var(--yellow);
     font-weight: bold;
+    border: 2px solid var(--dark-gray);
     border-radius: 5px;
   }
   
   /* ----- ABOUT SECTION STYLES ----- */
-  #about {
+  #tabs-1 {
     padding: 3rem;
     background-color: var(--light-brown);
   }
-  .dark-mode #about {
+  .dark-mode #tabs-1 {
     background-color: var(--dark-gray);
   }
-  #about a {
+  #tabs-1 a {
     color: var(--green);
     text-decoration: none;
     font-weight: bold;
   }
   
   /* ----- SEARCH SECTION STYLES ----- */
-  #search {
+  #tabs-2 {
     padding: 2rem 4rem;
     background-color: var(--dark-gray);
     color: var(--white);
@@ -297,10 +315,10 @@
     font-weight: bold;
     padding: 0px 10px 15px;
   }
-  .dark-mode #search {
+  .dark-mode #tabs-2 {
     background-color: var(--dark-gray);
   }
-  #search input {
+  #tabs-2 input {
     display: inline;
     margin: 0.5rem 0rem;
     border: 1.5px solid var(--dark-gray);
@@ -333,19 +351,18 @@
     height: 100px;
     margin-top: 15px;
   }
-  #mySubmit, #myWeatherSubmit {
+  #mySubmit {
     background-color: var(--dark-red);
     color: var(--white);
     font-weight: bold;
     text-transform: uppercase;
     width: 120px;
     margin: 5px auto;
-  }
-  #mySubmit {
     cursor: pointer;
   }
   .form-required {
     margin: 0 auto;
+    color: var(--yellow);
     font-family: var(--font2);
     font-size: 1rem;
     font-style: italic;
@@ -362,43 +379,40 @@
   }
 
   /* ----- FEATURED SECTION STYLES ----- */
-   #featured {
+   #tabs-3 {
     padding: 2rem;
-    background-color: var(--dark-gray);
-    color: var(--white);
+    background-color: var(--light-brown);
     border-top: 3px solid var(--yellow);
     border-bottom: 3px solid var(--yellow);
     overflow: hidden;
   }
-  #featured div {
+  #tabs-3 div {
     display: grid;
     margin: 5px;
     grid-template-columns: 1fr;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
   }
-  #featured section {
+  #tabs-3 div {
     display: block; 
     position: relative; 
     margin: 0 auto;
   }
-  #featured img {
-    width: 100%;
-    height: auto;
-    z-index: 0;
-  }
-  #featured h3 {
-    margin-top: 10px;
-    font-size: 120%;
-  }
-  #featured a {
+  #tabs-3 a {
     display: inline;
     padding: 5px 0px;
-    color: var(--yellow);
+    color: var(--dark-red);
+    font-weight: bold;
     text-decoration: none;
   }
-  #featured .bold {
+  #tabs-3 a:hover {
+    background-color: var(--bright-red);
+    color: var(--dark-gray);
+    padding: 2px;
+  }
+  #tabs-3 .bold {
     font-weight: bold;
+    color: var(--green);
   }
 
   /* ----- TESTIMONIALS STYLES ----- */
@@ -408,6 +422,9 @@
     position: relative; 
     margin: 0 auto;
   }
+  #testimonials h2 {
+    margin-top: 1rem;
+  }
   .dark-mode #testimonials {
     background-color: var(--dark-gray);
   }
@@ -415,10 +432,11 @@
   /* FOOTER STYLES */
   footer {
     position: relative;
+    color: var(--white);
     background-color: var(--dark-red);
     font-weight: bold;
-    border-top: 3px solid var(--yellow);
-    border-bottom: 1px solid var(--dark-gray);
+    border-top: 1px solid var(--yellow);
+    border-bottom: 1px solid var(--yellow);
     padding: 15px 0px 5px 0px;
     z-index: 0;
   }
@@ -428,7 +446,6 @@
   }
   footer a {
     display: inline;
-    font-style: smaller;
     padding: 8px 10px;
     color: var(--green);
     text-decoration: none;
@@ -444,6 +461,9 @@
   .dark-mode footer a:hover{
     background-color: var(--bright-red);
     color: var(--dark-gray);
+  }
+  footer small {
+    font-size: small;
   }
   
   /* MEDIA QUERY FOR SMALL SCREENS AT LEAST 600PX */
@@ -462,7 +482,10 @@
     main {
         min-width: 600px;
     }
-    #featured div {
+    #atlist-embed { 
+      width: 75%; height: 325px;
+    }
+    #tabs-3 div {
         grid-template-columns: 1fr;
         grid-row-gap: 5px;
     }
@@ -470,12 +493,35 @@
         width: 350px;
     }
   }
+
+  /* MEDIA QUERY FOR MAP AT MAX 600PX */
+  @media screen and (max-width: 600px) {
+    #atlist-embed { 
+      width: 75%; height: 325px;
+    }
+  }
   
-  /* MEDIA QUERY FOR SMALL SCREENS AT LEAST 880PX */
+  /* MEDIA QUERY FOR MEDIUM SCREENS AT LEAST 880PX */
   @media screen and (min-width: 880px) {
     body, nav, header, main, footer {
         width: 880px;
         margin: 0 auto;
+    }
+    h1 {
+      padding-right: 15rem;
+    }
+    #top-nav {
+      margin: 0 auto;
+      border-top: 2px solid var(--yellow);
+      border-bottom: 3px solid var(--yellow);
+      background-color: var(--bright-red);
+      position: relative;
+      top: 15px;
+      text-align: center;
+      z-index: 1;
+    }
+    #menu {
+      visibility: hidden;
     }
     nav li {
         justify-content: center;
@@ -485,25 +531,29 @@
     li:nth-of-type(4) {
         flex-basis: 100px;
     }
+    .img-screenshot{
+      height: auto;
+      visibility: visible;
+    }
     main {
         min-width: 880px;
     }
-  footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-    "title"
-    "div";
-  }
-  #footer h3 {
-    grid-area: title;
-  }
-  input {
+    footer {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      grid-template-areas:
+      "title"
+      "div";
+    }
+    #footer h3 {
+      grid-area: title;
+    }
+    input {
         width: 700px;
     }
   }
-  /* MEDIA QUERY FOR SCREEN AND MIN-WIDTH OF 1280PX */
+  /* MEDIA QUERY FOR LARGE SCREENS AND MIN-WIDTH OF 1280PX */
   @media screen and (min-width: 1280px) {
     body, nav, header, main, footer {
         width: 1000px;
@@ -517,15 +567,19 @@
     li:nth-of-type(4) {
         flex-basis: 100px;
     }
+    .img-screenshot{
+      height: auto;
+      visibility: visible;
+    }
     main {
         max-width: 1000px;
     }
-    footer div {
+    #tabs-3 div, footer div {
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 5px;
         grid-row-gap: 100px;
     }
-    #testimonials, #featured {
+    #testimonials, #tabs-3 {
         position: relative;
     }
     #testimonials {
